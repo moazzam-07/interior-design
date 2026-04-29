@@ -1,0 +1,144 @@
+.hero {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: 8rem clamp(2rem, 5vw, 5rem) 4rem;
+}
+
+.inner {
+  max-width: 600px;
+}
+
+.label {
+  margin-bottom: var(--space-xl);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+  perspective: 600px;
+}
+
+.subtitle {
+  font-size: var(--text-body-lg);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: var(--space-2xl);
+}
+
+.ctas {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2xl);
+}
+
+.badge {
+  display: flex;
+}
+
+/* Hero Image */
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--bg-primary) 0%,
+    transparent 15%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  animation: float 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .content {
+    padding: 10rem 1.5rem 3rem;
+    text-align: left;
+  }
+
+  .inner {
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .imageOverlay {
+    background: linear-gradient(
+      to bottom,
+      var(--bg-primary) 0%,
+      transparent 20%
+    );
+  }
+
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding-top: 8rem;
+  }
+
+  .ctas {
+    flex-direction: column;
+  }
+
+  .ctas a {
+    width: 100%;
+    text-align: center;
+  }
+}

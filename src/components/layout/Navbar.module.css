@@ -1,0 +1,356 @@
+/* ============================================================
+   FLOATING GLASSMORPHIC NAVBAR
+   Detached pill · Backdrop blur · Hide on scroll down
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  pointer-events: none; /* allow clicks through the padding area */
+  will-change: transform, opacity;
+}
+
+/* The floating glass pill */
+.pill {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0.65rem 0.65rem 0.65rem 1.4rem;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px) saturate(1.6);
+  -webkit-backdrop-filter: blur(24px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 100px;
+  box-shadow:
+    0 4px 24px rgba(26, 24, 21, 0.06),
+    0 1px 3px rgba(26, 24, 21, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  pointer-events: auto;
+}
+
+/* When scrolled — slightly denser glass */
+.navbar.scrolled .pill {
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 8px 32px rgba(26, 24, 21, 0.08),
+    0 2px 6px rgba(26, 24, 21, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  flex-shrink: 0;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: background-color 0.3s ease;
+}
+
+.logo:hover .logoMark {
+  background-color: var(--accent);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   DESKTOP NAV LINKS
+   ============================================================ */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navLink {
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.45rem 0.85rem;
+  border-radius: 100px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background-color: rgba(26, 24, 21, 0.04);
+}
+
+.navLink.navLinkActive {
+  color: var(--text-primary);
+}
+
+/* Active indicator dot */
+.navDot {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+/* ============================================================
+   CTA BUTTON
+   ============================================================ */
+.actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 1.3rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-inverse);
+  background-color: var(--text-primary);
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: all 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.ctaButton:hover::before {
+  transform: scaleX(1);
+}
+
+.ctaButton:hover {
+  box-shadow: 0 4px 16px rgba(184, 134, 11, 0.25);
+}
+
+.ctaButton:active {
+  transform: scale(0.96);
+}
+
+/* ============================================================
+   HAMBURGER (custom animated bars)
+   ============================================================ */
+.menuToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease;
+}
+
+.menuToggle:hover {
+  background-color: rgba(26, 24, 21, 0.05);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 14px;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  transition: all 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Open state — morphs to X */
+.hamburger.hamburgerOpen span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.hamburgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+.hamburger.hamburgerOpen span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 98;
+  background-color: rgba(26, 24, 21, 0.3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem clamp(2rem, 8vw, 3.5rem) 3rem;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--space-3xl);
+}
+
+.mobileLink {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-lg);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--text-inverse);
+  letter-spacing: -0.02em;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid rgba(250, 250, 247, 0.06);
+  transition: color 0.2s ease;
+}
+
+.mobileLink:hover {
+  color: var(--accent-light);
+}
+
+.mobileLinkNumber {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  letter-spacing: 0.05em;
+  opacity: 0.5;
+}
+
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileFooter {
+  margin-top: auto;
+  font-size: var(--text-xs);
+  color: rgba(250, 250, 247, 0.3);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .desktopNav,
+  .actions {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+
+  .pill {
+    padding: 0.5rem 0.7rem 0.5rem 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .logoText {
+    font-size: 1rem;
+  }
+
+  .logoMark {
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,93 @@
+.process {
+  overflow: hidden;
+}
+
+.header {
+  margin-bottom: var(--space-4xl);
+  max-width: 600px;
+}
+
+.headerSub {
+  font-size: var(--text-body-lg);
+  color: rgba(250, 250, 247, 0.55);
+  line-height: 1.7;
+  margin-top: var(--space-lg);
+}
+
+.steps {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3xl);
+  padding-left: var(--space-4xl);
+  max-width: 700px;
+}
+
+.progressLine {
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: rgba(250, 250, 247, 0.1);
+  border-radius: 2px;
+}
+
+.progressFill {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-light), var(--pop));
+  transform-origin: top;
+  border-radius: 2px;
+}
+
+.step {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 24px;
+  position: absolute;
+  left: 0;
+}
+
+.stepNumber span {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--accent-light);
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.stepTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--text-inverse);
+}
+
+.stepDesc {
+  font-size: var(--text-body);
+  color: rgba(250, 250, 247, 0.55);
+  line-height: 1.7;
+  max-width: 480px;
+}
+
+.cta {
+  display: flex;
+  margin-top: var(--space-4xl);
+}
+
+@media (max-width: 768px) {
+  .steps {
+    padding-left: var(--space-2xl);
+  }
+}

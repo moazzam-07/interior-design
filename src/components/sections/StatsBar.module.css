@@ -1,0 +1,56 @@
+.statsBar {
+  background-color: var(--bg-dark);
+  padding: var(--space-3xl) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-xl);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  text-align: center;
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text-inverse);
+  letter-spacing: -0.02em;
+}
+
+.suffix {
+  color: var(--accent-light);
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 400;
+  color: rgba(250, 250, 247, 0.5);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl) var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .number {
+    font-size: 1.8rem;
+  }
+}
