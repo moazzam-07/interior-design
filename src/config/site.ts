@@ -4,17 +4,17 @@
 
 export const siteConfig = {
   // Brand
-  name: "Luxe Interiors",
+  name: "ASG Interiors",
   tagline: "Where Vision Meets Space",
-  subtitle: "Award-winning interior design studio crafting bespoke living experiences across Mumbai",
+  subtitle: "The Best interior design studio crafting bespoke living experiences across Delhi",
   description:
-    "Luxe Interiors is Mumbai's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
+    "ASG Interiors is Delhi's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
 
   // Location
-  city: "Mumbai",
-  state: "Maharashtra",
+  city: "Delhi",
+  state: "Delhi",
   country: "India",
-  address: "402, Altamount Road, South Mumbai, Maharashtra 400026",
+  address: "402, Panchsheel Enclave, South Delhi, Delhi 110049",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890",
 
@@ -22,7 +22,7 @@ export const siteConfig = {
   phone: "+919748301670",
   phoneDisplay: "+91 97483 01670",
   whatsapp: "919748301670",
-  email: "hello@luxeinteriors.in",
+  email: "hello@asg-interiors.in",
 
   // WhatsApp pre-filled messages (per section context)
   whatsappMessages: {
@@ -44,15 +44,15 @@ export const siteConfig = {
   reviews: {
     rating: 4.9,
     count: 1200,
-    profileUrl: "https://g.co/kgs/luxeinteriors",
+    profileUrl: "https://g.co/kgs/asg",
   },
 
   // Social Media
   social: {
-    instagram: "https://instagram.com/luxeinteriors",
-    pinterest: "https://pinterest.com/luxeinteriors",
-    facebook: "https://facebook.com/luxeinteriors",
-    linkedin: "https://linkedin.com/company/luxeinteriors",
+    instagram: "https://instagram.com/asg",
+    pinterest: "https://pinterest.com/asg",
+    facebook: "https://facebook.com/asg",
+    linkedin: "https://linkedin.com/company/asg",
   },
 
   // Designer Info
