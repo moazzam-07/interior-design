@@ -8,7 +8,7 @@ export const siteConfig = {
   tagline: "Where Vision Meets Space",
   subtitle: "The Best interior design studio crafting bespoke living experiences across Ahmedabad",
   description:
-    "Matter Of Space is Ahmedabad's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
+    "LiveDelite Interior is Ahmedabad's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
 
   // Location
   city: "Ahmedabad",

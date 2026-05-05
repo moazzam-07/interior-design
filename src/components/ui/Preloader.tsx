@@ -43,7 +43,7 @@ export default function Preloader() {
               color: 'var(--text-tertiary)',
             }}
           >
-            {siteConfig.description.split(' ').slice(0, 3).join(' ')}...
+            {siteConfig.tagline}
           </motion.p>
         </motion.div>
       )}
