@@ -4,25 +4,25 @@
 
 export const siteConfig = {
   // Brand
-  name: "ASG Interiors",
+  name: "LiveDelite Interior",
   tagline: "Where Vision Meets Space",
-  subtitle: "The Best interior design studio crafting bespoke living experiences across Delhi",
+  subtitle: "The Best interior design studio crafting bespoke living experiences across Ahmedabad",
   description:
-    "ASG Interiors is Delhi's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
+    "Matter Of Space is Ahmedabad's premier interior design studio. We transform ordinary spaces into extraordinary living experiences with a focus on craftsmanship, innovation, and timeless elegance.",
 
   // Location
-  city: "Delhi",
-  state: "Delhi",
+  city: "Ahmedabad",
+  state: "Gujrat",
   country: "India",
-  address: "402, Panchsheel Enclave, South Delhi, Delhi 110049",
+  address: "South ahemdabad",
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890",
+    "https://www.google.com/search?sca_esv=b493f18cdd742725&sxsrf=ANbL-n7Zhf4bnEHugdkK-LSAXbbUn-Oscw:1777636053059&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVRSssLt4IkhjDbvxmzQITnhKkONQ9W-dN5T4gcNm_w9fyOzN9awIQjg5fgHk0EYCsC9K6SC1ulmNh17tg7Z3MCXcBdjAE3bu2Dnfpducg6glUZ-74rC9PmD-x_XjPNGHH6Rzbg%3D&q=Deco+Your+Dream+Interior+Pvt.+Ltd.+Reviews&sa=X&ved=2ahUKEwiDxu2rgpiUAxVAUGcHHR_DIm0Q0bkNegQIMBAH&biw=1528&bih=698&dpr=1.25",
 
   // Contact
   phone: "+919748301670",
   phoneDisplay: "+91 97483 01670",
   whatsapp: "919748301670",
-  email: "hello@asg-interiors.in",
+  email: "hello@LiveDelite.in",
 
   // WhatsApp pre-filled messages (per section context)
   whatsappMessages: {

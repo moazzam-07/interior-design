@@ -11,6 +11,7 @@ import StatsBar from '@/components/sections/StatsBar';
 import Footer from '@/components/layout/Footer';
 
 // Lazy load below-fold sections for performance
+const Showcase = dynamic(() => import('@/components/sections/Showcase'), { ssr: false });
 const Portfolio = dynamic(() => import('@/components/sections/Portfolio'), { ssr: false });
 const Services = dynamic(() => import('@/components/sections/Services'), { ssr: false });
 const Process = dynamic(() => import('@/components/sections/Process'), { ssr: false });
@@ -34,6 +35,9 @@ export default function Home() {
 
         {/* Section 02 — Trust Bar / Stats */}
         <StatsBar />
+
+        {/* Section 02.5 — Signature Project Showcase */}
+        <Showcase />
 
         {/* Section 03 — Portfolio / Showcase */}
         <Portfolio />

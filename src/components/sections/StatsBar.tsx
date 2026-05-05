@@ -84,7 +84,7 @@ export default function StatsBar() {
             <AnimatedCounter
               value={stat.value}
               suffix={stat.suffix}
-              isDecimal={stat.isDecimal}
+              isDecimal={'isDecimal' in stat ? (stat as any).isDecimal : false}
             />
             <span className={styles.label}>{stat.label}</span>
           </div>

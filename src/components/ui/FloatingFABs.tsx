@@ -31,7 +31,7 @@ export default function FloatingFABs() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fab-container"
+          className="fab-container flex flex-col items-center"
           initial={{ opacity: 0, y: 40, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.8 }}

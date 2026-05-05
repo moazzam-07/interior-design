@@ -17,6 +17,7 @@ const projects = [
     category: 'Residential',
     location: 'Bandra West, Mumbai',
     video: '/videos/portfolio-1.mp4',
+    poster: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=60',
     size: 'large',
   },
   {
@@ -25,6 +26,7 @@ const projects = [
     category: 'Commercial',
     location: 'Lower Parel, Mumbai',
     video: '/videos/portfolio-2.mp4',
+    poster: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=60',
     size: 'medium',
   },
   {
@@ -33,6 +35,7 @@ const projects = [
     category: 'Kitchen',
     location: 'Juhu, Mumbai',
     video: '/videos/portfolio-3.mp4',
+    poster: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=60',
     size: 'medium',
   },
   {
@@ -41,6 +44,7 @@ const projects = [
     category: 'Residential',
     location: 'Powai, Mumbai',
     video: '/videos/portfolio-4.mp4',
+    poster: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=60',
     size: 'large',
   },
   {
@@ -49,6 +53,7 @@ const projects = [
     category: 'Living Room',
     location: 'Worli, Mumbai',
     video: '/videos/portfolio-5.mp4',
+    poster: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=60',
     size: 'large',
   },
   {
@@ -57,6 +62,7 @@ const projects = [
     category: 'Bathroom',
     location: 'South Mumbai',
     video: '/videos/portfolio-6.mp4',
+    poster: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=60',
     size: 'medium',
   },
 ];
@@ -122,6 +128,8 @@ export default function Portfolio() {
                 <div className={styles.cardImage}>
                   <video
                     src={project.video}
+                    poster={project.poster}
+                    preload="auto"
                     autoPlay
                     muted
                     loop

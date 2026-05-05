@@ -72,6 +72,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  background-color: var(--bg-dark, #1A1815);
   transition: transform var(--duration-slow) var(--ease-out-expo);
 }
 

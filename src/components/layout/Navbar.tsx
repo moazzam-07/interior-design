@@ -150,7 +150,7 @@ export default function Navbar() {
                 className={styles.ctaButton}
                 onClick={(e) => handleNavClick(e, '#contact')}
               >
-                Book Free Consultation
+                <span>Book Free Consultation</span>
               </a>
             </div>
 
