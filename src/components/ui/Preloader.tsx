@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { siteConfig } from '@/config/site';
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ export default function Preloader() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           >
-            Luxe Interiors
+            {siteConfig.name}
           </motion.div>
           <div className="preloader-line" />
           <motion.p
@@ -42,7 +43,7 @@ export default function Preloader() {
               color: 'var(--text-tertiary)',
             }}
           >
-            Crafting Spaces
+            {siteConfig.description.split(' ').slice(0, 3).join(' ')}...
           </motion.p>
         </motion.div>
       )}
