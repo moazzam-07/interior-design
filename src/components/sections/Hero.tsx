@@ -16,7 +16,7 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 2.4 });
+      const tl = gsap.timeline({ delay: 1.0 });
 
       // Image reveal
       tl.fromTo(
