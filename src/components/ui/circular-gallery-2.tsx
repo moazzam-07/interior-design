@@ -713,18 +713,27 @@ const CircularGallery = ({
     const computedColor = computedStyle.color || "hsl(var(--foreground))";
     const computedFontFamily = computedStyle.fontFamily || "sans-serif";
 
-    const app = new App(containerRef.current, {
-      items,
-      bend,
-      textColor: computedColor,
-      borderRadius,
-      font: computedFontFamily,
-      scrollSpeed,
-      scrollEase,
-    });
+    let app: App | null = null;
+    try {
+      app = new App(containerRef.current, {
+        items,
+        bend,
+        textColor: computedColor,
+        borderRadius,
+        font: computedFontFamily,
+        scrollSpeed,
+        scrollEase,
+      });
+    } catch (error) {
+      console.error("CircularGallery failed to initialize (WebGL might not be supported):", error);
+    }
 
     return () => {
-      app.destroy();
+      if (app) {
+        try {
+          app.destroy();
+        } catch (e) {}
+      }
     };
   }, [items, bend, borderRadius, scrollSpeed, scrollEase, fontClassName]);
 
